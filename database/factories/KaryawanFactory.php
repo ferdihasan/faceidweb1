@@ -19,8 +19,10 @@ class KaryawanFactory extends Factory
         return [
             "name" => fake()->name(),
             "email" => fake()->unique()->safeEmail(),
+            "nik" => fake()->nik(),
             "alamat" => fake()->city(),
-            "tanggal_join" => fake()->dateTime(),
+            "tanggal_lahir" => fake()->dateTimeBetween('-40 years', '-20 years'),
+            "tanggal_join" => fake()->dateTimeBetween('-10 years'),
         ];
     }
 }
