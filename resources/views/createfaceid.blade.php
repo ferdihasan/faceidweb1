@@ -11,7 +11,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="name">Nama</label>
-                    <select name="name" id="name" class="form-control" aria-label="Default select example" onchange="onChangeSelect()">
+                    <select name="name" id="name" class="form-select" aria-label="Default select example" onchange="onChangeSelect()">
                         <option selected>Pilih Nama Karyawan</option>
                         @foreach ($karyawan as $name).
                             <option value="{{ $name->name }}">{{ $name->name }}</option>

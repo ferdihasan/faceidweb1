@@ -4,6 +4,12 @@
 
     @include('components/sidebar')
 
+    {{-- <?php
+        if (isset($result_delete) === true){
+            alert('berhasil di hapus');
+        }
+    ?> --}}
+
     <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Daftar Karyawan</h1>
         <hr>
@@ -35,12 +41,17 @@
                             <td>{{ $kar->tanggal_join }}</td>
                             <td>
                                 {{-- <a href="tambah-karyawan" data-bs-toggle="tooltip" data-bs-title="tambah" data-bs-placement="top"><i class="bi bi-plus-square"></i></a>  --}}
-                                <button class="btn">
-                                    <a href="edit-karyawan/{{ $kar->id }}"><i class="bi bi-pencil" style="color: green"></i></a> 
-                                </button>
-                                <button class="btn">
-                                    <a href="hapus-karyawan/{{ $kar->id }}"><i class="bi bi-trash" style="color: red"></i></a>
-                                </button>
+                                <div class="d-flex flex-row">
+                                    <button class="btn">
+                                        <a href="edit-karyawan/{{ $kar->id }}"><i class="bi bi-pencil" style="color: green"></i></a> 
+                                    </button>
+                                    <form action="hapus-karyawan/{{ $kar->id }}" method="post" onsubmit="return confirm(`Apakah ingin menghapus karyawan {{ $kar->name }} `)">
+                                        @csrf
+                                        <button class="btn" type="submit">
+                                            <i class="bi bi-trash" style="color: red"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         <?php $angka++ ?>
@@ -50,4 +61,5 @@
         </div>
     </div>
 </div>
+
 @endsection

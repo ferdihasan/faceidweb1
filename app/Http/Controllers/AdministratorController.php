@@ -28,4 +28,23 @@ class AdministratorController extends Controller
             "karyawan" => Karyawan::All()
         ]);
     }
+
+    public function hapusKaryawan(Request $request) {
+        $req_id = $request->id;
+        $user = Karyawan::find($req_id);
+        $name = $user->name;
+        if ($user->delete() == true) {
+            echo 'Karyawan ' , $name , ' has been deleted';
+            // return redirect('administrator', [
+            //     "result_delete" => true
+            // ]);
+            return redirect('administrator');
+        }
+        else {
+            return redirect('administrator', [
+                "result_delete" => false
+            ]);
+        }
+
+    }
 }
