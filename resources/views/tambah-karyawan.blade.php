@@ -4,7 +4,7 @@
 
     @include('components/sidebar')
     
-    <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 80vh">
+    <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Tambah Karyawan</h1>
     </div>
 </div>

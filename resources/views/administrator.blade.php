@@ -4,12 +4,12 @@
 
     @include('components/sidebar')
 
-    <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 80vh">
+    <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Daftar Karyawan</h1>
         <hr>
         <div class="overflow-x-scroll" style="height: 80vh">
-            <table class="table table-striped" style="width:110%">
-                <thead>
+            <table class="table table-striped " style="width:110%">
+                <thead class="align-center">
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
@@ -33,7 +33,15 @@
                             <td>{{ $kar->alamat }}</td>
                             <td>{{ $kar->tanggal_lahir }}</td>
                             <td>{{ $kar->tanggal_join }}</td>
-                            <td></td>
+                            <td>
+                                {{-- <a href="tambah-karyawan" data-bs-toggle="tooltip" data-bs-title="tambah" data-bs-placement="top"><i class="bi bi-plus-square"></i></a>  --}}
+                                <button class="btn">
+                                    <a href="edit-karyawan/{{ $kar->id }}"><i class="bi bi-pencil" style="color: green"></i></a> 
+                                </button>
+                                <button class="btn">
+                                    <a href="hapus-karyawan/{{ $kar->id }}"><i class="bi bi-trash" style="color: red"></i></a>
+                                </button>
+                            </td>
                         </tr>
                         <?php $angka++ ?>
                     @endforeach
