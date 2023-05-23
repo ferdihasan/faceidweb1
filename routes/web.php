@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\CreatefaceidController;
 use App\Http\Controllers\AdministratorController;
 
 /*
@@ -34,3 +35,5 @@ Route::get('login', [LoginController::class, 'login'])->name('login')->middlewar
 Route::post('login', [LoginController::class, 'autenticate'])->middleware('guest');
 //logout
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth');
+
+Route::get('createfaceid', [CreatefaceidController::class, 'index']);
