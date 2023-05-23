@@ -26,6 +26,9 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('administrator', [AdministratorController::class, 'index'])->middleware('auth');
 Route::post('administrator', [AdministratorController::class, 'index']);
+Route::get('tambah-karyawan', [AdministratorController::class, 'tambahKaryawan'])->middleware('auth');
+Route::get('daftar-absensi', [AdministratorController::class, 'daftarAbsensi'])->middleware('auth');
+
 
 
 Route::get('absensi', [AbsensiController::class, 'index']);

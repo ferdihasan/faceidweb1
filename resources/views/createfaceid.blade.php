@@ -49,14 +49,8 @@
             const email = document.getElementById('email')
             email.value = 'ferdihasanpwd@gmail.com'
         }
-        console.log('test')
-        
+
         const karyawan = <?php echo $karyawan ?>
-
-
-        // console.log('adasda')
-        // console.log(karyawan)
-        // console.log(jumlahKaryawan)
 
         // console.log(karyawan)
         const onChangeSelect = () => {
@@ -67,8 +61,8 @@
             
             const selected = karyawan.find(user => user.name == select.value)
 
-            console.log(select.value)
-            console.log(selected)
+            // console.log(select.value)
+            // console.log(selected)
             nik.value = selected.nik
             email.value = selected.email
             departemen.value = selected.departemen
