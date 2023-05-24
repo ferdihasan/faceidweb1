@@ -62,4 +62,37 @@ class AdministratorController extends Controller
         }
 
     }
+
+    public function editKaryawan(Request $request) {
+        $req_id = $request->id;
+        
+        return view('edit-karyawan', [
+            "title" => "Daftar Karyawan",
+            "karyawan" => Karyawan::find($req_id),
+        ]);
+    }
+
+    public function simpanUpdateKaryawan(Request $request) {
+        $req_id = $request->id;
+        $req_name = $request->name;
+        $req_email = $request->email;
+        $req_nik = $request->nik;
+        $req_alamat = $request->alamat;
+        $req_departemen = $request->departemen;
+        $req_tanggal_lahir = $request->tanggal_lahir;
+        $req_tanggal_join = $request->tanggal_join;
+
+        $absen = Karyawan::find($req_id);
+        $absen->update([
+            'name' => $req_name,
+            'email' => $req_waktu_masuk,
+            'nik' => $req_nik,
+            'alamat' => $req_alamat,
+            'departemen' => $req_departemen,
+            'tanggal_lahir' => $req_tanggal_lahir,
+            'tanggal_join' => $req_tanggal_join,
+        ]);
+
+        return redirect('administrator');
+    }
 }

@@ -34,7 +34,7 @@
                                 <div class="d-flex flex-row">
                                     <form action="edit-absensi/{{ $absen->id }}" method="post">
                                         @csrf
-                                        <button class="btn">
+                                        <button class="btn" type="submit">
                                             <i class="bi bi-pencil" style="color: green"></i>
                                         </button>
                                     </form>
