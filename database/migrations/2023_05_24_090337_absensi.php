@@ -13,18 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('karyawans', function (Blueprint $table) {
+        Schema::create('absensi', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('nik')->unique();
-            $table->string('departemen');
-            $table->string('alamat');
-            $table->date('tanggal_lahir');
-            $table->date('tanggal_join');
-            $table->string('faceid')->nullable();
+            $table->string('karyawan_id');
+            $table->date('tanggal_absen');
+            $table->time('waktu_masuk')->nullable();
+            $table->time('waktu_keluar')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('absensi');
     }
 };
