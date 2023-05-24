@@ -34,10 +34,11 @@
                             <select name="departemen" id="departemen" class="form-select" aria-label="Default select example">
                                 <option selected>Pilih Departemen</option>
                                 <option value="finance">Finance</option>
-                                <option value="produksi">Produksi</option>
-                                <option value="procurement">Procurement</option>
-                                <option value="warehouse">Warehouse</option>
+                                <option value="it">IT</option>
                                 <option value="logistic">Logistic</option>
+                                <option value="procurement">Procurement</option>
+                                <option value="produksi">Produksi</option>
+                                <option value="warehouse">Warehouse</option>
                             </select>
                         </input>
                     </div>
