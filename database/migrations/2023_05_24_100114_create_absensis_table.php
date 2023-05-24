@@ -21,7 +21,6 @@ return new class extends Migration
             $table->time('waktu_keluar')->nullable();
             $table->timestamps();
         });
-
     }
 
     /**
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absensi');
+        Schema::dropIfExists('absensis');
     }
 };
