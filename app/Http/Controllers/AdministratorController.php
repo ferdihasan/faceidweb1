@@ -37,12 +37,12 @@ class AdministratorController extends Controller
         return redirect('administrator');
     }
 
-    public function daftarAbsensi() {
-        return view('daftar-absensi', [
-            "title" => "Daftar Absensi",
-            "karyawan" => Karyawan::All()
-        ]);
-    }
+    // public function daftarAbsensi() {
+    //     return view('daftar-absensi', [
+    //         "title" => "Daftar Absensi",
+    //         "karyawan" => Karyawan::All()
+    //     ]);
+    // }
 
     public function hapusKaryawan(Request $request) {
         $req_id = $request->id;

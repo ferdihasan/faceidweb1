@@ -27,10 +27,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('administrator', [AdministratorController::class, 'index'])->middleware('auth');
 Route::post('administrator', [AdministratorController::class, 'index']);
 Route::get('tambah-karyawan', [AdministratorController::class, 'tambahKaryawan'])->middleware('auth');
-Route::get('daftar-absensi', [AdministratorController::class, 'daftarAbsensi'])->middleware('auth');
 Route::post('hapus-karyawan/{id}', [AdministratorController::class, 'hapusKaryawan'])->middleware('auth');
 Route::post('form-tambah-karyawan', [AdministratorController::class, 'simpanKaryawan'])->middleware('auth');
 
+Route::get('daftar-absensi', [AbsensiController::class, 'index'])->middleware('auth');
 
 
 Route::get('absensi', [AbsensiController::class, 'index']);
