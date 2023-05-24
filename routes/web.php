@@ -29,11 +29,15 @@ Route::post('administrator', [AdministratorController::class, 'index'])->middlew
 Route::get('tambah-karyawan', [AdministratorController::class, 'tambahKaryawan'])->middleware('auth');
 Route::post('hapus-karyawan/{id}', [AdministratorController::class, 'hapusKaryawan'])->middleware('auth');
 Route::post('form-tambah-karyawan', [AdministratorController::class, 'simpanKaryawan'])->middleware('auth');
+Route::post('edit-karyawan/{id}', [AdministratorController::class, 'editKaryawan'])->middleware('auth');
+Route::post('edit-karyawan/form-edit-karyawan/{id}', [AdministratorController::class, 'simpanUpdateKaryawan'])->middleware('auth');
+
 
 Route::get('daftar-absensi', [AbsensiController::class, 'index'])->middleware('auth');
 // Route::post('daftar-absensi', [AbsensiController::class, 'index'])->middleware('auth');
 Route::post('hapus-absensi/{id}', [AbsensiController::class, 'hapusAbsensi'])->middleware('auth');
-Route::get('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
+Route::post('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
+Route::post('edit-absensi/form-edit-absensi/{id}', [AbsensiController::class, 'simpanAbsensi'])->middleware('auth');
 
 
 

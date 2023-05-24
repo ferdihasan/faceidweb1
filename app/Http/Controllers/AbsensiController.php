@@ -37,4 +37,20 @@ class AbsensiController extends Controller
             "absensi" => Absensi::find($req_id),
         ]);
     }
+
+    public function simpanAbsensi(Request $request) {
+        $req_id = $request->id;
+        $req_tanggal_absen = $request->tanggal_absen;
+        $req_waktu_masuk = $request->waktu_masuk;
+        $req_waktu_keluar = $request->waktu_keluar;
+
+        $absen = Absensi::find($req_id);
+        $absen->update([
+            'tanggal_absen' => $req_tanggal_absen,
+            'waktu_masuk' => $req_waktu_masuk,
+            'waktu_keluar' => $req_waktu_keluar,
+        ]);
+
+        return redirect('daftar-absensi');
+    }
 }
