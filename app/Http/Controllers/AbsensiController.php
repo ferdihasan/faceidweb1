@@ -14,4 +14,27 @@ class AbsensiController extends Controller
             "absensi" => Absensi::All(),
         ]);
     }
+
+    public function hapusAbsensi(Request $request){
+        $req_id = $request->id;
+
+        $absen = Absensi::find($req_id);
+
+        if($absen->delete() === true) {
+            // dd('sudah terhapus');
+            return redirect('daftar-absensi');
+        }
+        else {
+            dd('invalid');
+            
+        }
+    }
+
+    public function editAbsensi(Request $request) {
+        $req_id = $request->id;
+        return view ('edit-absensi', [
+            "title" => "Daftar Absensi",
+            "absensi" => Absensi::find($req_id),
+        ]);
+    }
 }

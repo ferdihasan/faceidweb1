@@ -33,9 +33,9 @@
                                 {{-- <a href="tambah-karyawan" data-bs-toggle="tooltip" data-bs-title="tambah" data-bs-placement="top"><i class="bi bi-plus-square"></i></a>  --}}
                                 <div class="d-flex flex-row">
                                     <button class="btn">
-                                        <a href="edit-karyawan/{{ $absen->id }}"><i class="bi bi-pencil" style="color: green"></i></a> 
+                                        <a href="edit-absensi/{{ $absen->id }}"><i class="bi bi-pencil" style="color: green"></i></a> 
                                     </button>
-                                    <form action="hapus-karyawan/{{ $absen->id }}" method="post" onsubmit="return confirm(`Apakah ingin menghapus absensi karyawan {{ $absen->karyawan->name }} `)">
+                                    <form action="hapus-absensi/{{ $absen->id }}" method="post" onsubmit="return confirm(`Apakah ingin menghapus absensi karyawan {{ $absen->karyawan->name }} `)">
                                         @csrf
                                         <button class="btn" type="submit">
                                             <i class="bi bi-trash" style="color: red"></i>

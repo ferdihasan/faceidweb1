@@ -57,7 +57,7 @@ class AdministratorController extends Controller
         }
         else {
             return redirect('administrator', [
-                "result_delete" => false
+                // "result_delete" => false
             ]);
         }
 
