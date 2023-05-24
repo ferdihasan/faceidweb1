@@ -22,6 +22,21 @@ class AdministratorController extends Controller
         ]);
     }
 
+    public function simpanKaryawan(Request $request) {
+        // dd($request);
+        Karyawan::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "nik" => $request->nik,
+            "departemen" => $request->departemen,
+            "alamat" => $request->alamat,
+            "tanggal_lahir" => $request->tanggal_lahir,
+            "tanggal_join" => $request->tanggal_join,
+        ]);
+
+        return redirect('administrator');
+    }
+
     public function daftarAbsensi() {
         return view('daftar-absensi', [
             "title" => "Daftar Absensi",

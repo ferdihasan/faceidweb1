@@ -7,7 +7,7 @@
     <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Tambah Karyawan</h1>
         <hr>
-        <form action="tambah-karyawan" method="post">
+        <form action="form-tambah-karyawan" method="post" onsubmit="return confirm('Apakah anda yakin data yang anda masukan sudah benar?')">
             @csrf
             <div class="d-flex flex-row row">
                 <div class="d-flex flex-column col-3">
@@ -17,15 +17,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" email="email" class="form-control" id="email" required>
+                        <input type="email"  name="email" class="form-control" id="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="nik" class="form-label">NIK</label>
-                        <input type="text" nik="nik" class="form-control" id="nik" required>
+                        <input type="text" name="nik" class="form-control" id="nik" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" alamat="alamat" class="form-control" id="alamat" required>
+                        <input type="text" name="alamat" class="form-control" id="alamat" required>
                     </div>
                 </div>
                 <div class="d-flex flex-column col-3">
@@ -43,11 +43,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-                        <input type="date" tanggal_lahir="tanggal_lahir" class="form-control" id="tanggal_lahir" required>
+                        <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" required>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal_join" class="form-label">Tanggal Masuk</label>
-                        <input type="date" tanggal_join="tanggal_join" class="form-control" id="tanggal_join" required>
+                        <input type="date" name="tanggal_join" class="form-control" id="tanggal_join" required>
                     </div>
                 </div>
             </div>
