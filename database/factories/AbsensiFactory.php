@@ -17,7 +17,10 @@ class AbsensiFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "karyawan_id" => fake()->randomDigit(),
+            "tanggal_absen" => fake()->dateTimeBetween('-1 week', 'now'),
+            "waktu_masuk" => fake()->time(),
+            "waktu_keluar" => fake()->time(),
         ];
     }
 }

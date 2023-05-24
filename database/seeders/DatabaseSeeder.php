@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\Absensi;
 use App\Models\Karyawan;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Karyawan::factory(20)->create();
+        Absensi::factory(20)->create();
 
         User::create([
             "name" => "Ferdi Hasan",
