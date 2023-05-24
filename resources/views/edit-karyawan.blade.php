@@ -7,7 +7,7 @@
     <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Edit Karyawan</h1>
         <hr>
-        <form action="form-tambah-karyawan/{{ $karyawan->id }}" method="post" onsubmit="return confirm('Apakah anda yakin data yang anda masukan sudah benar?')">
+        <form action="form-edit-karyawan/{{ $karyawan->id }}" method="post" onsubmit="return confirm('Apakah anda yakin data yang anda masukan sudah benar?')">
             @csrf
             <div class="d-flex flex-row row">
                 <div class="d-flex flex-column col-3">

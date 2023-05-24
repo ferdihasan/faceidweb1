@@ -10,10 +10,10 @@
             <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link {{ ($title === "Administrator") ? 'active' : '' }}" href="administrator">Administration</a>
+            <a class="nav-link {{ ($title === "Administrator") ? 'active' : '' }}" href="/administrator">Administration</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ ($title === "Absensi") ? 'active' : '' }}" href="absensi">Absensi</a>
+                <a class="nav-link {{ ($title === "Absensi") ? 'active' : '' }}" href="/absensi">Absensi</a>
             </li>    
         </ul>
 

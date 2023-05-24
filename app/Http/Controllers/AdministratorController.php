@@ -85,7 +85,7 @@ class AdministratorController extends Controller
         $absen = Karyawan::find($req_id);
         $absen->update([
             'name' => $req_name,
-            'email' => $req_waktu_masuk,
+            'email' => $req_email,
             'nik' => $req_nik,
             'alamat' => $req_alamat,
             'departemen' => $req_departemen,
