@@ -33,7 +33,7 @@ Route::post('edit-karyawan/{id}', [AdministratorController::class, 'editKaryawan
 Route::post('edit-karyawan/form-edit-karyawan/{id}', [AdministratorController::class, 'simpanUpdateKaryawan'])->middleware('auth');
 
 
-Route::get('daftar-absensi', [AbsensiController::class, 'index'])->middleware('auth');
+Route::get('daftar-absensi', [AbsensiController::class, 'daftarAbsensi'])->middleware('auth');
 // Route::post('daftar-absensi', [AbsensiController::class, 'index'])->middleware('auth');
 Route::post('hapus-absensi/{id}', [AbsensiController::class, 'hapusAbsensi'])->middleware('auth');
 Route::post('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
