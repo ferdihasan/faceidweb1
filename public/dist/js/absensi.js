@@ -1,5 +1,5 @@
-import * as faceapi from 'face-api.js'
-// const faceapi = require('face-api.js')
+// import * as faceapi from '../face-api.js'
+const faceapi = require('face-api.js')
 
 const video = document.getElementById('video')
 
