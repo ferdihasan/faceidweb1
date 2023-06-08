@@ -60,4 +60,11 @@ class AbsensiController extends Controller
 
         return redirect('daftar-absensi');
     }
+
+    public function tambahAbsensi(){
+        return view('tambah-absensi', [
+            'title' => 'Tambah Absensi',
+            'karyawan' => Karyawan::All()
+        ]);
+    }
 }

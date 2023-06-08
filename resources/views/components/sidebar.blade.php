@@ -3,6 +3,9 @@
         <li class="nav-item">
             <a href="/tambah-karyawan" class="nav-link link-body-emphasis {{ ($title === "Tambah Karyawan") ? 'active' : '' }}"><i class="bi bi-plus-square"></i> Tambah Karyawan</a>
         </li>
+        <li class="nav-item">
+            <a href="/tambah-absensi" class="nav-link link-body-emphasis {{ ($title === "Tambah Absensi") ? 'active' : '' }}"><i class="bi bi-plus-square"></i> Tambah Absensi</a>
+        </li>
         <hr>
         <li>
             <a href="/administrator" class="nav-link link-body-emphasis {{ ($title === "Daftar Karyawan") ? 'active' : '' }}"><i class="bi bi-card-list"></i> Daftar Karyawan</a>
