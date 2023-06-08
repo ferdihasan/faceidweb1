@@ -2,6 +2,7 @@
 // const faceapi = require('face-api.js')
 
 const video = document.getElementById('video')
+let detectionResult = null
 
 // navigator usermedia has not supported
 navigator.getUserMedia = ( navigator.getUserMedia ||
@@ -31,14 +32,19 @@ video.addEventListener('play', () => {
     const displaySize = {width: video.width, height: video.height}
     faceapi.matchDimensions(canvas, displaySize)
     setInterval(async () => {
-        const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks()
+        const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors()
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDetections)
         // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-        console.log(detections)
+        // console.log(detections)
+        detectionResult = detections
     }, 100)
 })
+
+const onClickBtn = () => {
+    console.log(detectionResult)
+}
 
 // console.log()
 
@@ -46,4 +52,3 @@ video.addEventListener('play', () => {
 
 
 
-        

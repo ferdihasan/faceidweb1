@@ -10,12 +10,14 @@
     canvas {
         position: absolute;
         border: 1px solid black;
-        left: 3.4rem;
-        top: 7rem;
+        left: 128px;
+        top: 117px;
     }
 </style>
     <h1>Absensi</h1>
     <video id="video" width="720" height="560" autoplay muted></video>
+
+    <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a>
 
     {{-- path di public/dist/js/absensi.js --}}
     {{-- path di resource/js/faceid.js --}}
