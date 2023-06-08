@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('none-container')
+@section('container')
 <style>
 
     body {
@@ -10,7 +10,8 @@
     canvas {
         position: absolute;
         border: 1px solid black;
-        left: 0;
+        left: 3.4rem;
+        top: 7rem;
     }
 </style>
     <h1>Absensi</h1>
