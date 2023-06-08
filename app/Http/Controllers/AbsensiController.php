@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absensi;
+use App\Models\Karyawan;
 
 class AbsensiController extends Controller
 {

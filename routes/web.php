@@ -38,10 +38,10 @@ Route::get('daftar-absensi', [AbsensiController::class, 'daftarAbsensi'])->middl
 Route::post('hapus-absensi/{id}', [AbsensiController::class, 'hapusAbsensi'])->middleware('auth');
 Route::post('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
 Route::post('edit-absensi/form-edit-absensi/{id}', [AbsensiController::class, 'simpanAbsensi'])->middleware('auth');
-// Route::get('tambah-absensi', [AdministratorController::class, 'test']);
-Route::get('caca', function () {
-    dd('selamat datang');
-});
+Route::get('tambah-absensi', [AbsensiController::class, 'tambahAbsensi']);
+// Route::get('caca', function () {
+//     dd('selamat datang');
+// });
 
 
 
