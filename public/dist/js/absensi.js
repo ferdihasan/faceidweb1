@@ -1,9 +1,12 @@
-// import * as faceapi from '../face-api.js'
-// const faceapi = require('face-api.js')
+// data example json face ferdi
+// import ferdi from 'dist/face/ferdi.json'
+// const ferdi = <?php  ?>
 
 const video = document.getElementById('video')
-let detectionResult = null
-
+let detectionResult
+// const label = ['ferdi', 'rotul']
+// const face_ferdi = JSON.parse(ferdi)
+// console.log(face_ferdi)
 // navigator usermedia has not supported
 navigator.getUserMedia = ( navigator.getUserMedia ||
     navigator.webkitGetUserMedia ||
@@ -12,8 +15,8 @@ navigator.getUserMedia = ( navigator.getUserMedia ||
 
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('dist/face-api.js/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('dist/face-api.js//models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('dist/face-api.js//models')
+    faceapi.nets.faceLandmark68Net.loadFromUri('dist/face-api.js/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('dist/face-api.js/models'),
 ]).then(startVideo);
 
 
@@ -39,11 +42,13 @@ video.addEventListener('play', () => {
         // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
         // console.log(detections)
         detectionResult = detections
+        
     }, 100)
 })
 
 const onClickBtn = () => {
     console.log(detectionResult)
+
 }
 
 // console.log()

@@ -40,9 +40,17 @@
             </form>
         </div>
         <div class="col m-1" style="border: 1px solid black; border-radius: 5px">
-            <h1>test</h1>
+            <div class="d-flex justify-content-center">
+                <h1>test</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <video id="video" height="320px" width="480px" style="border: 1px solid black" autoplay muted></video>
+            </div>
         </div>
     </div>
+
+    <script defer src="dist/js/createfaceid.js"></script>
+    <script defer src="dist/face-api.js/face-api.min.js"></script>
 
     <script type="text/javascript">
         const onLoadEmail = () => {

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('alamat');
             $table->date('tanggal_lahir');
             $table->date('tanggal_join');
-            $table->string('faceid')->nullable();
             $table->timestamps();
         });
     }

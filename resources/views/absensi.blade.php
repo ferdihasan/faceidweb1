@@ -33,8 +33,11 @@
     </script> --}}
 
     {{-- Menggunakan library dari luar node_modules --}}
-    <script defer src="dist/face-api.js/face-api.min.js"></script>
     {{-- <script defer src="dist/face-api.js/script.js"></script> --}}
+    {{-- <script>
+        const ferdi = <?php echo Json_decode(File_get_contents('dist/face/ferdi.json')) ?>
+    </script> --}}
+    <script defer src="dist/face-api.js/face-api.min.js"></script>
     <script defer src="dist/js/absensi.js"></script>
 
 
