@@ -16,7 +16,7 @@
 
     @include('components.navbar')
     
-    <div class="container">
+    <div class="container" id="container">
         @yield('container')
     </div>
 

@@ -13,8 +13,8 @@ class AbsensiController extends Controller
     public function index(){
         return view('absensi', [
             "title" => "Absensi",
-            "faceid1" => Faceid::find(1)->faceid1,
-            "faceid2" => Faceid::find(1)->faceid2
+            "faceid" => Faceid::All(),
+            "karyawan" => Karyawan::All()
         ]);
     }
 
