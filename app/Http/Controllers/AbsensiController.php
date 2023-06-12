@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Absensi;
 use App\Models\Karyawan;
+use App\Models\Faceid;
 
 class AbsensiController extends Controller
 {
@@ -12,6 +13,8 @@ class AbsensiController extends Controller
     public function index(){
         return view('absensi', [
             "title" => "Absensi",
+            "faceid1" => Faceid::find(1)->faceid1,
+            "faceid2" => Faceid::find(1)->faceid2
         ]);
     }
 
@@ -66,6 +69,13 @@ class AbsensiController extends Controller
         return view('tambah-absensi', [
             'title' => 'Tambah Absensi',
             'karyawan' => Karyawan::All()
+        ]);
+    }
+
+    public function test(){
+        return view('test', [
+            "faceid1" => Faceid::find(1)->faceid1,
+            "faceid2" => Faceid::find(1)->faceid2,
         ]);
     }
 }

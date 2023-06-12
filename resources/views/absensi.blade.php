@@ -1,5 +1,6 @@
 @extends('layouts/main')
 @section('container')
+
 <style>
 
     body {
@@ -19,26 +20,9 @@
 
     <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a>
 
-    {{-- path di public/dist/js/absensi.js --}}
-    {{-- path di resource/js/faceid.js --}}
-    {{-- <script src="{{ asset('js/faceid.js') }}"></script> --}}
-
-    {{-- <script src="../js"></script> --}}
-    {{-- {{ $path = resource_path('js/faceid.js') }}
-    <script src="{{ $path }}"></script> --}}
-
-    {{-- <script type="module">
-        import * as faceapi from 'face-api.js'
-        console.log('test')
-    </script> --}}
-
     {{-- Menggunakan library dari luar node_modules --}}
-    {{-- <script defer src="dist/face-api.js/script.js"></script> --}}
-    {{-- <script>
-        const ferdi = <?php echo Json_decode(File_get_contents('dist/face/ferdi.json')) ?>
-    </script> --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
-    <script defer src="dist/js/absensi.js"></script>
+    <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid1 }}')"></script>
 
 
 

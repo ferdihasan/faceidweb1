@@ -39,9 +39,7 @@ Route::post('hapus-absensi/{id}', [AbsensiController::class, 'hapusAbsensi'])->m
 Route::post('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
 Route::post('edit-absensi/form-edit-absensi/{id}', [AbsensiController::class, 'simpanAbsensi'])->middleware('auth');
 Route::get('tambah-absensi', [AbsensiController::class, 'tambahAbsensi']);
-// Route::get('caca', function () {
-//     dd('selamat datang');
-// });
+Route::get('test', [AbsensiController::class, 'test']);
 
 
 
