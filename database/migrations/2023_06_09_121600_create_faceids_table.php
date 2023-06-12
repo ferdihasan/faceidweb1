@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('faceids', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('karyawan_id');
             $table->longText('faceid1')->nullable();
             $table->longText('faceid2')->nullable();
+            $table->timestamps();
         });
     }
 
