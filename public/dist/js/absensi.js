@@ -87,21 +87,21 @@ video.addEventListener('play', () => {
     }, 100)
 
     //membuat kondisi jika hasil pengenalan tidak sama dengan unknown
-    setInterval(() => {
-        // mengecek apakah var label hasil tidak sama dengan undefined
-        if (labelHasil !== undefined) {
-            if (labelHasil.split(" ")[0] !== "unknown"){
-                // menghapus (x.x) pada label hasil
-                const arrayLabel = labelHasil.split(" ")
-                arrayLabel.pop()
-                const labelAlert = arrayLabel.join(" ")
-                alert(labelAlert)
-            }
-            else {
-                alert('data unknown')
-            }
-        }
-    },3000)
+    // setInterval(() => {
+    //     // mengecek apakah var label hasil tidak sama dengan undefined
+    //     if (labelHasil !== undefined) {
+    //         if (labelHasil.split(" ")[0] !== "unknown"){
+    //             // menghapus (x.x) pada label hasil
+    //             const arrayLabel = labelHasil.split(" ")
+    //             arrayLabel.pop()
+    //             const labelAlert = arrayLabel.join(" ")
+    //             alert(labelAlert)
+    //         }
+    //         else {
+    //             alert('data unknown')
+    //         }
+    //     }
+    // },3000)
 })
 
 function onClickBtn() {

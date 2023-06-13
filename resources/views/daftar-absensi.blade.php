@@ -1,3 +1,4 @@
+{{-- {{ dd($absensi[0]->karyawan->name) }} --}}
 @extends('layouts/main')
 @section('none-container')
 <div class="d-flex flex-row">
