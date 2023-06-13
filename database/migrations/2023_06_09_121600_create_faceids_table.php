@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('faceids', function (Blueprint $table) {
             $table->id();
-            $table->string('karyawan_id');
+            $table->string('karyawan_id')->unique();
             $table->longText('faceid1')->nullable();
             $table->longText('faceid2')->nullable();
             $table->timestamps();
