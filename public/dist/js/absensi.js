@@ -90,7 +90,10 @@ video.addEventListener('play', () => {
     setInterval(() => {
         if (labelHasil !== undefined) {
             if (labelHasil.split(" ")[0] !== "unknown"){
-                alert("Ferdi Hasan")
+                const arrayLabel = labelHasil.split(" ")
+                arrayLabel.pop()
+                const labelAlert = arrayLabel.join(" ")
+                alert(labelAlert)
             }
             else {
                 alert('data unknown')
