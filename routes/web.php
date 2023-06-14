@@ -41,6 +41,8 @@ Route::post('edit-absensi/form-edit-absensi/{id}', [AbsensiController::class, 's
 Route::get('tambah-absensi', [AbsensiController::class, 'tambahAbsensi']);
 Route::get('test', [AbsensiController::class, 'test']);
 
+Route::get('createfaceid', [CreatefaceidController::class, 'index'])->middleware('auth');
+Route::post('createfaceid/{id}',[CreatefaceidController::class, 'saveFaceId'])->middleware('auth');
 
 
 Route::get('absensi', [AbsensiController::class, 'index']);
@@ -50,5 +52,3 @@ Route::get('login', [LoginController::class, 'login'])->name('login')->middlewar
 Route::post('login', [LoginController::class, 'autenticate'])->middleware('guest');
 //logout
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth');
-
-Route::get('createfaceid', [CreatefaceidController::class, 'index']);
