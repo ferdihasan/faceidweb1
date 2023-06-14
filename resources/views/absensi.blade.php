@@ -54,13 +54,20 @@
             </div>
         </div>
     </div>
+    {{-- membuat form hidden untuk di submit ke db --}}
+    <form id="form" method="post">
+        @csrf
+        <input type="text" name="name" id="name">
+        <input type="text" name="faceid" id="faceid">
+        <input type="time" name="time" id="time">
+    </form>
 
     {{-- <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a> --}}
 
     {{-- Menggunakan library dari luar node_modules --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
     <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}')"></script>
-
+    <script defer src="dist/js/submitFormAbsensi"></script>
 
 
 @endsection
