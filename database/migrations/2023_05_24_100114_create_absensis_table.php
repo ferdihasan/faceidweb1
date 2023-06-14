@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('karyawan_id');
             $table->date('tanggal_absen');
-            $table->time('waktu_masuk')->nullable();
-            $table->time('waktu_keluar')->nullable();
+            $table->time('waktu_absen')->nullable();
             $table->timestamps();
         });
     }
