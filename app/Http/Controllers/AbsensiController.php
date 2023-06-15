@@ -14,7 +14,9 @@ class AbsensiController extends Controller
         return view('absensi', [
             "title" => "Absensi",
             "faceid" => Faceid::All(),
-            "karyawan" => Karyawan::All()
+            "karyawan" => Karyawan::All(),
+            "absensi" => Absensi::All(),
+            "angka" => 1,
         ]);
     }
 
@@ -91,6 +93,7 @@ class AbsensiController extends Controller
         ]);
         return response()->json([
             'success' => true,
+            'name' => $name,
             'tanggal' => $tanggal,
             'waktu' => $time,
         ]);

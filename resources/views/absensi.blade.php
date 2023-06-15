@@ -41,16 +41,13 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
+                        @foreach ($absensi as $a)
                         <tr>
-                            <td>1</td>
-                            <td>Ferdi Hasan</td>
-                            <td>07:50</td>
+                            <td>{{ $angka }}</td>
+                            <td>{{ $a->karyawan->departemen }}</td>
+                            <td>{{ $a->waktu_absen }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Roudhotul Jannah</td>
-                            <td>07:48</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

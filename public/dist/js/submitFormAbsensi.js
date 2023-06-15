@@ -72,8 +72,8 @@ form.addEventListener('submit', event => {
         const time = new Date()
         // memasukan variable ke element
         cellNumber.textContent = 3
-        cellNama.textContent = formName
-        cellWaktu.textContent = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+        cellNama.textContent = data.name
+        cellWaktu.textContent = data.waktu
         // memasukan variable cell ke element row
         row.appendChild(cellNumber)
         row.appendChild(cellNama)

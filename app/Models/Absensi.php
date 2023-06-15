@@ -13,7 +13,7 @@ class Absensi extends Model
 
     protected $guarded = ['id'];
 
-    public function Karyawan(): BelongsTo {
+    public function karyawan(): BelongsTo {
         return $this->belongsTo(Karyawan::class);
     }
 }
