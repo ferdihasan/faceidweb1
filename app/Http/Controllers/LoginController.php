@@ -44,7 +44,7 @@ class LoginController extends Controller
         // return view('')
         // dd(request());
         return redirect('/', [
-            'isLogin' => false,
+            'isLogin' => 0,
         ]);
     }
 }

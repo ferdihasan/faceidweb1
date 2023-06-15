@@ -59,7 +59,7 @@
         @csrf
         <input type="text" name="name" id="name" hidden>
         <input type="text" name="karyawan_id" id="karyawan_id" hidden>
-        <button type="submit" id="button"></button>
+        <button type="submit" id="button" hidden></button>
     </form>
 
     {{-- <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a> --}}

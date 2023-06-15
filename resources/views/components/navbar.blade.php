@@ -9,9 +9,15 @@
             <li class="nav-item">
             <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link {{ ($title === "Administrator") ? 'active' : '' }}" href="/administrator">Administration</a>
-            </li>
+            @auth
+                <li class="nav-item">
+                    <a class="nav-link {{ ($title === "Administrator") ? 'active' : '' }}" href="/administrator">Administration</a>
+                </li>                
+            @else
+                {{-- <li class="nav-item">
+                    <button type="button" class="btn btn-link text-decoration-none " data-bs-toggle="modal" data-bs-target="#loginModal">Administrator</button>
+                </li>   --}}
+            @endauth
             <li class="nav-item">
                 <a class="nav-link {{ ($title === "Absensi") ? 'active' : '' }}" href="/absensi">Absensi</a>
             </li>    
