@@ -20,18 +20,18 @@
                         <input type="text" name="nik" class="form-control" id="nik" required value="{{ $absensi->karyawan->nik }}" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="tanggal_absen" class="form-label">Tanggal Absen</label>
-                        <input type="date" name="tanggal_absen" class="form-control" id="tanggal_absen" required value="{{ $absensi->tanggal_absen }}">
+                        <label for="departemen" class="form-label">Departemen</label>
+                        <input type="text" name="departemen" class="form-control" id="departemen" required value="{{ $absensi->karyawan->departemen }}" readonly>
                     </div>
                 </div>
                 <div class="d-flex flex-column col-3">
                     <div class="mb-3">
-                        <label for="waktu_masuk" class="form-label">Waktu Masuk</label>
-                        <input type="time" name="waktu_masuk" class="form-control" id="waktu_masuk" required value="{{ $absensi->waktu_masuk }}">
+                        <label for="tanggal_absen" class="form-label">Tanggal Absen</label>
+                        <input type="date" name="tanggal_absen" class="form-control" id="tanggal_absen" required value="{{ $absensi->tanggal_absen }}">
                     </div>
                     <div class="mb-3">
-                        <label for="waktu_keluar" class="form-label">Waktu Keluar</label>
-                        <input type="time" name="waktu_keluar" class="form-control" id="waktu_keluar" required value="{{ $absensi->waktu_keluar }}">
+                        <label for="waktu_absen" class="form-label">Waktu Absen</label>
+                        <input type="time" name="waktu_absen" class="form-control" id="waktu_absen" required value="{{ $absensi->waktu_absen }}">
                     </div>
                 </div>
             </div>

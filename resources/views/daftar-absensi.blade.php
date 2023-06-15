@@ -16,8 +16,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">NIK</th>
                         <th scope="col">Tanggal Absen</th>
-                        <th scope="col">Waktu Masuk</th>
-                        <th scope="col">Waktu Keluar</th>
+                        <th scope="col">Waktu Absen</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -28,8 +27,7 @@
                             <td>{{ $absen->karyawan->name }}</td>
                             <td>{{ $absen->karyawan->nik }}</td>
                             <td>{{ $absen->tanggal_absen }}</td>
-                            <td>{{ $absen->waktu_masuk }}</td>
-                            <td>{{ $absen->waktu_keluar }}</td>
+                            <td>{{ $absen->waktu_absen }}</td>
                             <td>
                                 {{-- <a href="tambah-karyawan" data-bs-toggle="tooltip" data-bs-title="tambah" data-bs-placement="top"><i class="bi bi-plus-square"></i></a>  --}}
                                 <div class="d-flex flex-row">

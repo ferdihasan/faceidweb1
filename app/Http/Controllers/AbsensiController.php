@@ -74,13 +74,6 @@ class AbsensiController extends Controller
         ]);
     }
 
-    public function test(){
-        return view('test', [
-            "faceid1" => Faceid::find(1)->faceid1,
-            "faceid2" => Faceid::find(1)->faceid2,
-        ]);
-    }
-
     public function submitAbsensiFaceId(Request $request){
         $req_id = $request->karyawan_id;
         $name = $request->name;
@@ -97,5 +90,21 @@ class AbsensiController extends Controller
             'tanggal' => $tanggal,
             'waktu' => $time,
         ]);
+    }
+
+    public function submitTambahAbsensi(Request $request){
+        $name = $request->name;
+        $tanggal_absen = $request->tanggal_absen;
+        $waktu_absen = $request->waktu_absen;
+        $karyawans = Karyawan::All();
+        // $karyawan = $karyawans->where('name', $name);
+        $karyawan_id = $karyawans->where('name', $name)->first()->id;
+        Absensi::create([
+            'karyawan_id' => $karyawan_id,
+            'tanggal_absen' => $tanggal_absen,
+            'waktu_absen' => $waktu_absen,
+        ]);
+
+        return redirect('daftar-absensi');
     }
 }

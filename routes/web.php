@@ -38,8 +38,8 @@ Route::get('daftar-absensi', [AbsensiController::class, 'daftarAbsensi'])->middl
 Route::post('hapus-absensi/{id}', [AbsensiController::class, 'hapusAbsensi'])->middleware('auth');
 Route::post('edit-absensi/{id}', [AbsensiController::class, 'editAbsensi'])->middleware('auth');
 Route::post('edit-absensi/form-edit-absensi/{id}', [AbsensiController::class, 'simpanAbsensi'])->middleware('auth');
-Route::get('tambah-absensi', [AbsensiController::class, 'tambahAbsensi']);
-Route::get('test', [AbsensiController::class, 'test']);
+Route::get('tambah-absensi', [AbsensiController::class, 'tambahAbsensi'])->middleware('auth');
+Route::post('form-tambah-absensi', [AbsensiController::class, 'submitTambahAbsensi'])->middleware('auth');
 
 Route::get('createfaceid', [CreatefaceidController::class, 'index'])->middleware('auth');
 Route::post('createfaceid/{id}',[CreatefaceidController::class, 'saveFaceId'])->middleware('auth');

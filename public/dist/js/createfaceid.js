@@ -4,6 +4,10 @@
 
 const video = document.getElementById('video')
 const faceid = document.getElementById('faceid')
+const select = document.getElementById('name')
+const nik = document.getElementById('nik')
+const email = document.getElementById('emailFaceId')
+const departemen = document.getElementById('departemen')
 // const label = ['ferdi', 'rotul']
 // const face_ferdi = JSON.parse(ferdi)
 // console.log(face_ferdi)
@@ -27,11 +31,6 @@ function onLoadDataDbKaryawan(value) {
 
 // console.log(karyawan)
 const onChangeSelect = () => {
-    const select = document.getElementById('name')
-    const nik = document.getElementById('nik')
-    const email = document.getElementById('emailFaceId')
-    const departemen = document.getElementById('departemen')
-    
     const selected = karyawan.find(user => user.name == select.value)
     // console.log(select.value)
     // console.log(selected)
