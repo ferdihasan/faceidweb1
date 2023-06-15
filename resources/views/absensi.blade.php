@@ -44,7 +44,7 @@
                         @foreach ($absensi as $a)
                         <tr>
                             <td>{{ $angka }}</td>
-                            <td>{{ $a->karyawan->departemen }}</td>
+                            <td>{{ $a->karyawan->name }}</td>
                             <td>{{ $a->waktu_absen }}</td>
                         </tr>
                         @endforeach
