@@ -1,20 +1,22 @@
 @extends('layouts/main')
+@section('head')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+    
+        body {
+    
+    
+        }
+    
+        canvas {
+            position: absolute;
+            /* border: 1px solid black; */
+            left: 128px;
+            top: 117px;
+        }
+    </style>
+@endsection
 @section('container')
-
-<style>
-
-    body {
-
-
-    }
-
-    canvas {
-        position: absolute;
-        /* border: 1px solid black; */
-        left: 128px;
-        top: 117px;
-    }
-</style>
     <div class="d-flex row">
         <div class="col">
             <div class="d-flex justify-content-center">
@@ -38,7 +40,7 @@
                             <th scope="col">Jam</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody">
                         <tr>
                             <td>1</td>
                             <td>Ferdi Hasan</td>
@@ -55,11 +57,11 @@
         </div>
     </div>
     {{-- membuat form hidden untuk di submit ke db --}}
-    <form id="form" method="post">
+    <form action="submitAbsensiFaceId" id="form" method="POST">
         @csrf
-        <input type="text" name="name" id="name">
-        <input type="text" name="faceid" id="faceid">
-        <input type="time" name="time" id="time">
+        <input type="text" name="name" id="name" hidden>
+        <input type="text" name="karyawan_id" id="karyawan_id" hidden>
+        <button type="submit" id="button"></button>
     </form>
 
     {{-- <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a> --}}
@@ -67,7 +69,7 @@
     {{-- Menggunakan library dari luar node_modules --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
     <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}')"></script>
-    <script defer src="dist/js/submitFormAbsensi"></script>
+    <script defer src="dist/js/submitFormAbsensi.js"></script>
 
 
 @endsection

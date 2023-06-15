@@ -78,4 +78,21 @@ class AbsensiController extends Controller
             "faceid2" => Faceid::find(1)->faceid2,
         ]);
     }
+
+    public function submitAbsensiFaceId(Request $request){
+        $req_id = $request->karyawan_id;
+        $name = $request->name;
+        $tanggal = date('Y-m-d');
+        $time = date('H:i:s');
+        Absensi::create([
+            "karyawan_id" => $req_id,
+            "tanggal_absen" => $tanggal,
+            "waktu_absen" => $time,
+        ]);
+        return response()->json([
+            'success' => true,
+            'tanggal' => $tanggal,
+            'waktu' => $time,
+        ]);
+    }
 }

@@ -46,6 +46,7 @@ Route::post('createfaceid/{id}',[CreatefaceidController::class, 'saveFaceId'])->
 
 
 Route::get('absensi', [AbsensiController::class, 'index']);
+// Route::post('absensi', [AbsensiController::class, 'index']);
 Route::post('submitAbsensiFaceId', [AbsensiController::class, 'submitAbsensiFaceId']);
 //login
 Route::get('login', [LoginController::class, 'login'])->name('login')->middleware('guest');

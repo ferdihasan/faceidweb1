@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Karyawan::factory(20)->create();
-        Absensi::factory(20)->create();
+        Absensi::factory(2)->create();
 
         User::create([
             "name" => "Ferdi Hasan",
