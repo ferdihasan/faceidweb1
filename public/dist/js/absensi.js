@@ -4,9 +4,11 @@ const video = document.getElementById('video');
 let dataFaceJson
 let dataKaryawanJson
 let labelHasil
-function onLoadData(face, karyawan) {
+let nomorTable
+function onLoadData(face, karyawan, angka) {
     dataFaceJson = JSON.parse(face)
     dataKaryawanJson = JSON.parse(karyawan)
+    nomorTable = angka
     //jika ingin memanggil data array harus melakukan parsing json lagi
     // console.log(JSON.parse(dataFaceJson[0].karyawan_id))
     // console.log(dataKaryawanJson)

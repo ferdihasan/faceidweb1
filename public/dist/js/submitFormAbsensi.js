@@ -28,7 +28,7 @@ setInterval(() => {
             button.click()
         }
         else {
-            alert('data unknown')
+            // alert('data unknown')
         }
     }
 },10000)
@@ -71,7 +71,8 @@ form.addEventListener('submit', event => {
         const cellWaktu = document.createElement('td')
         const time = new Date()
         // memasukan variable ke element
-        cellNumber.textContent = 3
+        cellNumber.textContent = nomorTable
+        nomorTable++
         cellNama.textContent = data.name
         cellWaktu.textContent = data.waktu
         // memasukan variable cell ke element row
@@ -80,8 +81,7 @@ form.addEventListener('submit', event => {
         row.appendChild(cellWaktu)
         // memasukan variable row ke tbody
         tbody.appendChild(row)
-
-        console.log(data)
+        // console.log(data)
     })
     .catch(err => {
         // menangani data error

@@ -11,11 +11,12 @@ class AbsensiController extends Controller
 {
 
     public function index(){
+        $today = date('Y-m-d');
         return view('absensi', [
             "title" => "Absensi",
             "faceid" => Faceid::All(),
             "karyawan" => Karyawan::All(),
-            "absensi" => Absensi::All(),
+            "absensi" => Absensi::All()->where('tanggal_absen', $today),
             "angka" => 1,
         ]);
     }

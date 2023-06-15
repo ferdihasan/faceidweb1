@@ -47,6 +47,7 @@
                             <td>{{ $a->karyawan->name }}</td>
                             <td>{{ $a->waktu_absen }}</td>
                         </tr>
+                        <?php $angka++ ?>
                         @endforeach
                     </tbody>
                 </table>
@@ -65,7 +66,7 @@
 
     {{-- Menggunakan library dari luar node_modules --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
-    <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}')"></script>
+    <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}', '{{ $angka }}')"></script>
     <script defer src="dist/js/submitFormAbsensi.js"></script>
 
 
