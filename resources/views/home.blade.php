@@ -1,8 +1,75 @@
 
 @extends('layouts.main')
 @section('container')
-    <h1>Welcome</h1>
-</body>
-</html>
+    {{-- <div class="">
+        <img src="img/img5.jpeg" alt="img-hero" style="width: 100%">
+    </div> --}}
+    <div class="d-flex row mt-5">
+        <div class="col">
+            {{-- <img src="img/img1.jpeg" alt="img" class="img-fluid rounded-5 shadow img-thumbnail"> --}}
 
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner rounded-5">
+                    <div class="carousel-item active">
+                        <img src="img/img1.jpeg" class="d-block w-100" alt="img/img1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img2.jpeg" class="d-block w-100" alt="img/img2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img3.jpeg" class="d-block w-100" alt="img/img3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img4.jpeg" class="d-block w-100" alt="img/img4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img5.jpeg" class="d-block w-100" alt="img/img5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img6.jpeg" class="d-block w-100" alt="img/img6">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col p-4 ">
+            <div class="d-flex justify-content-center">
+                <h3>About Us</h3>
+            </div>
+            <div class="row">
+                <table>
+                    <tr>
+                        <th>Alamat Lengkap:</th>
+                        <td style="text-align: justify">Jl. Bulang No.18, Bulang, Kec. Prambon, Kabupaten Sidoarjo, Jawa Timur 61264</td>
+                    </tr>
+                    <tr>
+                        <th>About:</th>
+                        <td style="text-align: justify">Industri Kertas Jaya adalah industri yang bergerak di bidang pengolahan barang bekas sejak 1995 hingga sekarang.  Produk utama yang digunakan adalah kertas bekas dan kardus bekas yang akan di olah secara bertahap untuk dijadikan kertas baru yang akan dijual sebagai bahan dasar buku di industri besar percetakan Indonesia.</td>
+                    </tr>
+                    <tr>
+                        <th>Visi:</th>
+                        <td style="text-align: justify">menjadi sebuah industri yang memiliki daya saing tinggi dan menciptakan keharmonisan di segala aspek</td>
+                    </tr>
+                    <tr>
+                        <th>Misi:</th>
+                        <td style="text-align: justify">Tahan menghadapi pasar global dengan meningkatkan daya saing secara profesional dalam bidang : kualitas produk, pelayanan pelanggan, efisiensi, Intensif dan gigih bertahan dalam segala situasi untuk mencapai pertumbuhan yang berkelanjutan dan berkesinambungan. Memelihara keharmonisan universal dengan semua pemangku kepentingan.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('footer')
+    <footer class="shadow-lg" style="position: fixed; bottom: 0; width: 100%; height: 200px">
+        <div class="container p-4">
+            <h3>footer</h3>
+        </div>
+    </footer>
 @endsection

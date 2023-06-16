@@ -25,7 +25,7 @@ class AbsensiController extends Controller
         return view ('daftar-absensi', [
             "title" => "Daftar Absensi",
             "angka" => 1,
-            "absensi" => Absensi::All(),
+            "absensi" => Absensi::All()->reverse(),
         ]);
     }
 

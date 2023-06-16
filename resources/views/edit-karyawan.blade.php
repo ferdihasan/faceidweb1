@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Tambah Karyawan</button>
+            <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
         </form>
     </div>
 </div>
