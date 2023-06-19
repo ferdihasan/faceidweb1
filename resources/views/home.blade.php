@@ -67,9 +67,11 @@
     </div>
 @endsection
 @section('footer')
-    <footer class="shadow-lg" style="position: fixed; bottom: 0; width: 100%; height: 200px">
-        <div class="container p-4">
-            <h3>footer</h3>
+    <footer class="shadow-lg" style="position: fixed; bottom: 0; width: 100%; height: 50px">
+        <div class="container p-3">
+            <div class="d-flex justify-content-center">
+                <p>Powered By &copy; Kertas Jaya Industry</p>
+            </div>
         </div>
     </footer>
 @endsection
