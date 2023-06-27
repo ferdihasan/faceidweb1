@@ -25,6 +25,7 @@
                         <th scope="col">Alamat</th>
                         <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Tanggal Masuk</th>
+                        <th scope="col">Face ID</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -39,6 +40,7 @@
                             <td>{{ $kar->alamat }}</td>
                             <td>{{ $kar->tanggal_lahir }}</td>
                             <td>{{ $kar->tanggal_join }}</td>
+                            <td><?php echo $kar->faceid !== null ? 'Terdaftar' : 'Tidak terdaftar'  ?></td>
                             <td>
                                 {{-- <a href="tambah-karyawan" data-bs-toggle="tooltip" data-bs-title="tambah" data-bs-placement="top"><i class="bi bi-plus-square"></i></a>  --}}
                                 <div class="d-flex flex-row">

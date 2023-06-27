@@ -50,9 +50,26 @@
                         <label for="tanggal_join" class="form-label">Tanggal Masuk</label>
                         <input type="date" name="tanggal_join" class="form-control" id="tanggal_join" required value="{{ $karyawan->tanggal_join }}">
                     </div>
+                    <div class="mb-3">
+                        <label for="faceid" class="form-label">Face ID</label>
+                        <div class="d-flex flex-row">
+                            <input style="width: 85%" type="text" name="faceid" class="form-control" id="faceid" readonly value="<?php echo $karyawan->faceid !== null ? 'Terdaftar' : 'Tidak Terdaftar' ?>">
+                            @if ($karyawan->faceid !== null)
+                                <a href="/hapus-faceid/{{ $karyawan->id }}" class="btn">
+                                    <i class="bi bi-trash" style="color: red"></i>
+                                </a>
+                            @else
+                                <a href="/createfaceid" class="btn">
+                                    <i class="bi bi-pencil" style="color: green"></i>
+                                </a>
+                            @endif
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
+            <br>
+            <button class="btn btn-primary" type="submit" style="width: 20%">Simpan Perubahan</button>
         </form>
     </div>
 </div>

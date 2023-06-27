@@ -67,7 +67,7 @@
     {{-- Menggunakan library dari luar node_modules --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
     <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}', '{{ $angka }}')"></script>
-    <script defer src="dist/js/submitFormAbsensi.js"></script>
+    <script defer src="dist/js/submitFormAbsensi.js" onload="onLoadDataAbsensi('{{ $absensi }}')"></script>
 
 
 @endsection

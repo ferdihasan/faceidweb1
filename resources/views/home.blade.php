@@ -67,9 +67,53 @@
     </div>
 @endsection
 @section('footer')
-    <footer class="shadow-lg" style="position: fixed; bottom: 0; width: 100%; height: 50px">
-        <div class="container p-3">
+    <footer class="shadow-lg" style="position: fixed; bottom: 0; width: 100%; height: 170px">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-3">
+                    <div style="height: 100%; text-align: center; margin: auto">
+                        <br><br>
+                        <h2>Kertas Jaya</h2>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <h3>Contact</h3>
+                    </div>
+                    <div class="d-flex row">
+                        <div class="col">
+                            <table>
+                                <tr>
+                                    <th><i class="bi bi-envelope"></i> Email: </th>
+                                    <td>support@kertasjaya.com</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="bi bi-telephone"></i> Nomor: </th>
+                                    <td>029212345</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="bi bi-facebook"></i> Facebook: </th>
+                                    <td>https://www.facebook.com/kertasjaya</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table>
+                                <tr>
+                                    <th><i class="bi bi-twitter"></i> Twitter: </th>
+                                    <td>https://www.twitter.com/kertasjaya</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="bi bi-instagram"></i> instagram: </th>
+                                    <td>https://www.instagram.com/kertasjaya</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="d-flex justify-content-center">
+                <hr>
                 <p>Powered By &copy; Kertas Jaya Industry</p>
             </div>
         </div>

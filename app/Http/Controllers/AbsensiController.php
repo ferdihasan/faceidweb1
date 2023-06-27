@@ -90,6 +90,7 @@ class AbsensiController extends Controller
             'name' => $name,
             'tanggal' => $tanggal,
             'waktu' => $time,
+            'absensi' => Absensi::All()->where('tanggal_absen', $tanggal),
         ]);
     }
 

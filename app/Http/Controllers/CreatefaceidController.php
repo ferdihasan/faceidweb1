@@ -30,4 +30,12 @@ class CreatefaceidController extends Controller
 
         return redirect('administrator');
     }
+
+    public function hapusFaceid(Request $request){
+        // dd($request->id);
+        $req_id = $request->id;
+        $faceid = Faceid::find($req_id);
+        $faceid->delete();
+        return redirect('administrator');
+    }
 }

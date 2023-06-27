@@ -43,6 +43,7 @@ Route::post('form-tambah-absensi', [AbsensiController::class, 'submitTambahAbsen
 
 Route::get('createfaceid', [CreatefaceidController::class, 'index'])->middleware('auth');
 Route::post('createfaceid/{id}',[CreatefaceidController::class, 'saveFaceId'])->middleware('auth');
+Route::get('hapus-faceid/{id}', [CreatefaceidController::class, 'hapusFaceid'])->middleware('auth');
 
 
 Route::get('absensi', [AbsensiController::class, 'index']);
