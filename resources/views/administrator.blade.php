@@ -4,11 +4,13 @@
 
     @include('components/sidebar')
 
-    {{-- <?php
-        if (isset($result_delete) === true){
-            alert('berhasil di hapus');
-        }
-    ?> --}}
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{-- {{ session('success') }} --}}
+            <h3>sukses login</h3>
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+        </div>
+    @endif
 
     <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Daftar Karyawan</h1>
