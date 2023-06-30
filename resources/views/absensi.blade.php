@@ -1,3 +1,4 @@
+{{-- {{ dd($absensi) }} --}}
 @extends('layouts/main')
 @section('head')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -62,12 +63,26 @@
         <button type="submit" id="button" hidden></button>
     </form>
 
+    {{-- toast notifikasi --}}
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary">
+                <strong class="me-auto text-light">Alert</strong>
+                <small class="text-light">1 detik yang lalu</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toastBody" class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+
     {{-- <a onclick="onClickBtn()" class="btn btn-primary">tarik data</a> --}}
 
     {{-- Menggunakan library dari luar node_modules --}}
     <script defer src="dist/face-api.js/face-api.min.js"></script>
     <script defer src="dist/js/absensi.js" onload="onLoadData('{{ $faceid }}', '{{ $karyawan }}', '{{ $angka }}')"></script>
-    <script defer src="dist/js/submitFormAbsensi.js" onload="onLoadDataAbsensi('{{ $absensi }}')"></script>
+    <script defer src="dist/js/submitFormAbsensi.js" onload="onLoadDataAbsensi('{{ $absensi }}', {{ $jumlah_absensi }})"></script>
 
 
 @endsection

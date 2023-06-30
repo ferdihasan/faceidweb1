@@ -4,11 +4,15 @@ const karyawan_id = document.getElementById('karyawan_id')
 const tanggal = document.getElementById('tanggal')
 const waktu = document.getElementById('waktu')
 const button = document.getElementById('button')
+const liveToast = document.getElementById('liveToast')
+const toastBody = document.getElementById('toastBody')
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(liveToast)
 let absensi
-
+let jumlahAbsensi
 // onload array absensi
-function onLoadDataAbsensi(value) {
+function onLoadDataAbsensi(value, jmlAbsensi) {
     absensi = JSON.parse(value)
+    jumlahAbsensi = jmlAbsensi
 }
 
 // function event listener submit
@@ -46,7 +50,8 @@ form.addEventListener('submit', event => {
         // menangani data respon dari server
 
         // ambil data absensi terbaru
-        absensi = data.absensi
+        absensi.push(data.absensi[jumlahAbsensi])
+        // console.log(absensi)
         // create element
         const tbody  = document.getElementById('tbody')
         const row = document.createElement('tr')
@@ -92,40 +97,43 @@ setInterval(() => {
                 button.click()
             }
             //validasi apakah variable absensi tidak undefined
-            if (absensi !== undefined) {
+            if (absensi.length > 0) {
                 // validasi untuk absen 1 jam hanya boleh 1 kali absen
-                for (let i = 0; i< absensi.length; i++) {
-                    const mulaiAbsen = parseInt(absensi[i].waktu_absen.split(':')[0])
+                let isAbsenseble = true
+                for (let i = absensi.length; i> 0; i--) {
+                    const mulaiAbsen = parseInt(absensi[i-1].waktu_absen.split(':')[0])
                     const akhirAbsen = mulaiAbsen + 3
-                    const kar = dataKaryawanJson.find(value => value.id === parseInt(absensi[i].karyawan_id))
-                    const now = new Date()
-                    const jam = now.getHours()
-                    // console.log(jam)
-                    // console.log(mulaiAbsen)
-                    // console.log(akhirAbsen)
-                    if(labelName === kar.name) {
-                        if (jam >= mulaiAbsen && jam <= akhirAbsen ) {
-                            alert('data yang di input sudah tersedia')
+                    const kar = dataKaryawanJson.find(value => value.id === parseInt(absensi[i-1].karyawan_id))
+                    const jam = new Date()
+                    const now = jam.getHours()
+                    // pengkondisian ketika jam absen lebih dari 3 jam
+                    if (now >= mulaiAbsen && now <= akhirAbsen) {
+                        if (kar.name === labelName) {
+                            toastBody.innerText = `${labelName} sudah melakukan absensi`
+                            toastBootstrap.show()
                         }
                         else {
                             submitButton()
-                            alert('data yang di input belum tersedia')
+                            toastBody.innerText = `${labelName} berhasil melakukan absensi`
+                            toastBootstrap.show()
                         }
                     }
                     else {
-                        // submitButton
-                        console.log(typeof jam)
-                        console.log(jam)
-                        console.log(absensi)
-                        // alert('alert 3')
+                        if (kar.name === labelName && isAbsenseble === true) {
+                            submitButton()
+                            toastBody.innerText = `${labelName} berhasil melakukan absensi`
+                            toastBootstrap.show()
+                            isAbsenseble = false
+                        }
                     }
                 }
             }
-            else {
+            else if (absensi.length === 0) {
                 // console.log(absensi)
                 // console.log(absensi[0].waktu_absen.split(':')[0])
                 submitButton()
-                console.log('tugas telah selesai dijalankan')
+                toastBody.innerText = `${labelName} berhasil melakukan absensi`
+                toastBootstrap.show()
             }
         }
     }
