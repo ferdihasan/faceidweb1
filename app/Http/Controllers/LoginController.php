@@ -24,7 +24,7 @@ class LoginController extends Controller
         }
 
         return back()->with([
-            'email' => 'Akun tidak sesuai',
+            'email' => 'Email atau password tidak sesuai',
         ])->onlyInput('email');
     }
 
