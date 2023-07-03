@@ -27,7 +27,7 @@ class CreatefaceidController extends Controller
             "faceid1" => $request->faceid,
             "faceid2" => $request->faceid,
         ]);
-
+        Session::flash('save_faceid', 'Berhasil menambahkan faceid');
         return redirect('administrator');
     }
 

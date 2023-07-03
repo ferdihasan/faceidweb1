@@ -1,17 +1,50 @@
 @extends('layouts/main')
+@section('head')
+    <style>
+        .alert-centered {
+            position: absolute;
+            left: 50%;
+            y-index: +1;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endsection
 @section('none-container')
+@if (session()->has('hapus'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('hapus') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('tambah'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('tambah') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('update'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('update') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('save_faceid'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('save_faceid') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('loginSuccess'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('loginSuccess') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+
 <div class="d-flex flex-row">
-
+    
     @include('components/sidebar')
-
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{-- {{ session('success') }} --}}
-            <h3>sukses login</h3>
-            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
-        </div>
-    @endif
-
+    
     <div class="d-flex flex-column bg-body-tertiary p-3 m-1 rounded-3 shadow" style="width:100%; height: 88vh">
         <h1>Daftar Karyawan</h1>
         <hr>

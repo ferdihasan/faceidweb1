@@ -15,7 +15,7 @@
 <body>
 
     @include('components.navbar')
-    
+    @yield('alert')
     <div class="container" id="container">
         @yield('container')
     </div>

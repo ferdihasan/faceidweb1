@@ -22,7 +22,7 @@ use App\Http\Controllers\AdministratorController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('login');
 
 Route::get('administrator', [AdministratorController::class, 'index'])->middleware('auth');
 Route::post('administrator', [AdministratorController::class, 'index'])->middleware('auth');
@@ -50,7 +50,7 @@ Route::get('absensi', [AbsensiController::class, 'index']);
 // Route::post('absensi', [AbsensiController::class, 'index']);
 Route::post('submitAbsensiFaceId', [AbsensiController::class, 'submitAbsensiFaceId']);
 //login
-Route::get('login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+// Route::get('login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 
 Route::post('login', [LoginController::class, 'autenticate'])->middleware('guest');
 //logout

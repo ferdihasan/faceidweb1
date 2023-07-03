@@ -1,15 +1,31 @@
-{{-- @if (isset ($errors))
-    echo $errors;
-@endif --}}
 @extends('layouts.main')
+@section('head')
+    <style>
+        .alert-centered {
+            position: absolute;
+            left: 50%;
+            y-index: +1;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endsection
+@section('alert')
+    @if (session()->has('logout'))
+        <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+            <i class="bi bi-check-circle-fill"> </i>{{ session('logout') }}
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session()->has('email'))
+        <div class="alert alert-danger alert-dismissible fade show alert-centered" role="alert">
+            <i class="bi bi-x-circle-fill"> </i>{{ session('email') }}
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+        </div>
+    @endif
+@endsection
 @section('container')
-    {{-- <div class="">
-        <img src="img/img5.jpeg" alt="img-hero" style="width: 100%">
-    </div> --}}
     <div class="d-flex row mt-5">
         <div class="col">
-            {{-- <img src="img/img1.jpeg" alt="img" class="img-fluid rounded-5 shadow img-thumbnail"> --}}
-
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner rounded-5">
                     <div class="carousel-item active">

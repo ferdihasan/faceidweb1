@@ -19,11 +19,11 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
-
+            Session::flash('loginSuccess', 'Login berhasil!');
             return redirect()->intended('administrator');
         }
 
-        return back()->withError([
+        return back()->with([
             'email' => 'Akun tidak sesuai',
         ])->onlyInput('email');
     }
@@ -35,7 +35,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
+        Session::flash('logout', 'Logout Success!');
         return redirect('/');
     }
 
