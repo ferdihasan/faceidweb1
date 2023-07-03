@@ -85,7 +85,7 @@
     </div>
 @endsection
 @section('footer')
-    <footer class="shadow-lg" style="position:absolute; bottom: 0; width: 100%; height: 170px">
+    <footer class="shadow-lg" style="position:relative; bottom: 0; width: 100%; height: 170px">
         <div class="container">
             <div class="row mb-3">
                 <div class="col-3">
