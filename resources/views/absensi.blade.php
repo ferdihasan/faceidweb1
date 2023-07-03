@@ -32,7 +32,7 @@
             <div class="d-flex justify-content-center">
                 <h5><?php echo date('l jS F Y') ?></h5>
             </div>
-            <div class="overflow-y-scroll" style="height: 80vh">
+            <div class="overflow-y-scroll" style="height: 65vh">
                 <table class="table table-striped">
                     <thead class="align-center">
                         <tr>
