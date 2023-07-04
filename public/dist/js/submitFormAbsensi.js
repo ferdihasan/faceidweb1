@@ -94,11 +94,11 @@ setInterval(() => {
                 // untuk mensubmit form
                 button.click()
             }
+            //toast notifikasi ketika absensi
             const toastAlert = (value) => {
                 toastBody.innerText = value
                 toastBootstrap.show()
             }
-            console.log(absensi)
             // untuk memasukan data array yang ditemukan pertama kali
             const firstMatch  = {}
             if (absensi.length > 0) {
@@ -112,8 +112,6 @@ setInterval(() => {
                 }
             }
             else if (absensi.length === 0) {
-                // console.log(absensi)
-                // console.log(absensi[0].waktu_absen.split(':')[0])
                 submitButton()
                 toastAlert(`${labelName} berhasil melakukan absensi`)
             }
