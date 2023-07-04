@@ -7,20 +7,6 @@ use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\CreatefaceidController;
 use App\Http\Controllers\AdministratorController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', [HomeController::class, 'index'])->name('login');
 
@@ -29,6 +15,7 @@ Route::post('administrator', [AdministratorController::class, 'index'])->middlew
 Route::get('tambah-karyawan', [AdministratorController::class, 'tambahKaryawan'])->middleware('auth');
 Route::post('hapus-karyawan/{id}', [AdministratorController::class, 'hapusKaryawan'])->middleware('auth');
 Route::post('form-tambah-karyawan', [AdministratorController::class, 'simpanKaryawan'])->middleware('auth');
+Route::get('edit-karyawan/{id}', [AdministratorController::class, 'editKaryawan'])->middleware('auth');
 Route::post('edit-karyawan/{id}', [AdministratorController::class, 'editKaryawan'])->middleware('auth');
 Route::post('edit-karyawan/form-edit-karyawan/{id}', [AdministratorController::class, 'simpanUpdateKaryawan'])->middleware('auth');
 

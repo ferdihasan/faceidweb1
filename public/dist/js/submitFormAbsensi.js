@@ -7,7 +7,7 @@ const button = document.getElementById('button')
 const liveToast = document.getElementById('liveToast')
 const toastBody = document.getElementById('toastBody')
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(liveToast)
-let absensi
+let absensi = []
 let jumlahAbsensi
 // untuk menyimpan variable array yang pertama di ambil
 let allFirstMatches = []
@@ -16,7 +16,6 @@ function onLoadDataAbsensi(value, jmlAbsensi) {
     absensi = JSON.parse(value)
     jumlahAbsensi = jmlAbsensi
 }
-
 // function event listener submit
 form.addEventListener('submit', event => {
     // untuk membuat agar web tidak mereload jika di submit
@@ -34,10 +33,6 @@ form.addEventListener('submit', event => {
         },
         body: 
         formData
-        // {
-        //     'karyawan_id': formId,
-        //     'name': formName
-        // }
     })
     .then(res => {
         if (res.ok){
@@ -103,6 +98,7 @@ setInterval(() => {
                 toastBody.innerText = value
                 toastBootstrap.show()
             }
+            console.log(absensi)
             // untuk memasukan data array yang ditemukan pertama kali
             const firstMatch  = {}
             if (absensi.length > 0) {
@@ -123,47 +119,12 @@ setInterval(() => {
             }
             // untuk memasukan data array yang ditemukan
             allFirstMatches = Object.values(firstMatch)
-            // console.log(allFirstMatches)
-            // console.log(allFirstMatches[0].karyawan)
             //validasi apakah variable absensi tidak undefined
             if (allFirstMatches.length > 0) {
                 // validasi untuk absen 1 jam hanya boleh 1 kali absen
-                // for (let i = 0; i < allFirstMatches.length; i++) {
-                //     const mulaiAbsen = parseInt(allFirstMatches[i].waktu_absen.split(':')[0])
-                //     const akhirAbsen = mulaiAbsen + 3
-                //     // const kar = dataKaryawanJson.find(value => value.id === parseInt(allFirstMatches[i-1].karyawan_id))
-                //     const kar = allFirstMatches[i].karyawan
-                //     const jam = new Date()
-                //     const now = jam.getHours()
-                    // pengkondisian ketika jam absen lebih dari 3 jam
-                    // if (now >= mulaiAbsen && now <= akhirAbsen) {
-                    //     if (kar.name === labelName) {
-                    //         toastBody.innerText = `${labelName} sudah melakukan absensi`
-                    //         toastBootstrap.show()
-                    //     }
-                    //     else if (kar.name !== labelName) {
-                    //         submitButton()
-                    //         toastBody.innerText = `${labelName} berhasil melakukan absensi 1`
-                    //         toastBootstrap.show()
-                    //     }
-                    // }
-                    // else {
-                    //     submitButton()
-                    //     toastBody.innerText = `${labelName} berhasil melakukan absensi 2`
-                    //     toastBootstrap.show()
-                    // }
-                    // if (labelName === kar.name) {
-                    //     if (now >= mulaiAbsen && now <= akhirAbsen) {
-                    //         toastAlert(`${labelName} sudah melakukan absensi`)
-                    //     }
-                    // }
-                    
-                // }
-                // console.log(allFirstMatches)
                 const kar = dataKaryawanJson.find(value => value.name === labelName)
                 const absen = allFirstMatches.find(value => parseInt(value.karyawan_id) === kar.id)
                 if (absen !== undefined) {
-                    // console.log(kar)
                     const mulaiAbsen = parseInt(absen.waktu_absen.split(':')[0])
                     const akhirAbsen = mulaiAbsen + 3
                     const jam = new Date()
@@ -171,10 +132,6 @@ setInterval(() => {
                     if (now >= mulaiAbsen && now <= akhirAbsen) {
                         toastAlert(`${labelName} sudah melakukan absensi`)
                     }
-                    // else if (kar === undefined){
-                    //     submitButton()
-                    //     toastAlert(`${labelName} berhasil melakukan absensi`)
-                    // }
                     else {
                         submitButton()
                         toastAlert(`${labelName} berhasil melakukan absensi`)

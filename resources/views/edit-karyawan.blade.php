@@ -1,5 +1,27 @@
 @extends('layouts/main')
+@section('head')
+    <style>
+        .alert-centered {
+            position: absolute;
+            left: 50%;
+            y-index: +1;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endsection
 @section('none-container')
+@if (session()->has('hapusFaceId'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('hapusFaceId') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('errorHapusFaceId'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-x-circle-fill"> </i>{{ session('errorHapusFaceId') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
 <div class="d-flex flex-row">
 
     @include('components/sidebar')

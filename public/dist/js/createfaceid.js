@@ -1,24 +1,10 @@
-// data example json face ferdi
-// import ferdi from 'dist/face/ferdi.json'
-// const ferdi = <?php  ?>
-
 const video = document.getElementById('video')
 const faceid = document.getElementById('faceid')
 const select = document.getElementById('name')
 const nik = document.getElementById('nik')
 const email = document.getElementById('emailFaceId')
 const departemen = document.getElementById('departemen')
-// const label = ['ferdi', 'rotul']
-// const face_ferdi = JSON.parse(ferdi)
-// console.log(face_ferdi)
-
-// const onLoadEmail = () => {
-//     const email = document.getElementById('email')
-//     email.value = 'ferdihasanpwd@gmail.com'
-// }
 const form = document.getElementById('form')
-// const karyawan = <?php echo $karyawan ?>
-
 // memasukan data dari db php ke js
 const karyawan = []
 function onLoadDataDbKaryawan(value) {
@@ -26,14 +12,10 @@ function onLoadDataDbKaryawan(value) {
     for (let i = 0; i < dataJson.length; i++) {
         karyawan.push(dataJson[i])
     }
-    // console.log(karyawan[0].name)
 }
 
-// console.log(karyawan)
 const onChangeSelect = () => {
     const selected = karyawan.find(user => user.name == select.value)
-    // console.log(select.value)
-    // console.log(selected)
     nik.value = selected.nik
     email.value = selected.email
     departemen.value = selected.departemen
@@ -72,19 +54,8 @@ video.addEventListener('play', () => {
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDetections)
-        // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-        // console.log(detections)
-        // memasukan hasil data ke value input html face id
-        // faceid.value = JSON.stringify(resizedDetections.descriptor)
         const array = resizedDetections[0].descriptor
         faceid.value = `[${array}]`
-        // if (resizedDetections !== undefined) {
-        //     console.log('valid')
-        // }
-        // else if (resizedDetections === undefined) {
-        //     // faceid.value = 'valid'
-        //     console.log('tidak valid')
-        // }
     }, 100)
 })
 

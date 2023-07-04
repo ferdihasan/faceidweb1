@@ -9,11 +9,6 @@ function onLoadData(face, karyawan, angka) {
     dataFaceJson = JSON.parse(face)
     dataKaryawanJson = JSON.parse(karyawan)
     nomorTable = angka
-    //jika ingin memanggil data array harus melakukan parsing json lagi
-    // console.log(JSON.parse(dataFaceJson[0].karyawan_id))
-    // console.log(dataKaryawanJson)
-    // let nama = dataKaryawanJson.find(value => value.id === JSON.parse(dataFaceJson[0].karyawan_id))
-    // console.log(nama.name)
 }
 
 
@@ -50,25 +45,15 @@ video.addEventListener('play', () => {
         // rubah dari array biasa menjadi float32Array
         const array1 = JSON.parse(dataFaceJson[i].faceid1)
         const array2 = JSON.parse(dataFaceJson[i].faceid2)
-        // const float1 = new Float32Array(128)
-        // const float2 = new Float32Array(128)
         const float1 = Float32Array.from(array1)
         const float2 = Float32Array.from(array2)
-        // cek float32array
-        // console.log(array1)
-        // console.log(float1)
-        // for (j = 0; j < 128; j++) {
-        //     float1[j] = array1[j]
-        //     float2[j] = array2[j]
-        // }
+
         // memasukan data yang sesuai format ke array labeledFaceDescriptors
         labeledFaceDescriptors.push(new faceapi.LabeledFaceDescriptors(
             data.name,[ float1, float2,])
         )
 
     }
-    //test variable
-    // console.log(labeledFaceDescriptors)
 
     const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.5)
     // me load gambar

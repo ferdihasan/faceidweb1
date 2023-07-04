@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Karyawan;
 use App\Models\Faceid;
@@ -18,9 +19,6 @@ class CreatefaceidController extends Controller
 
     public function saveFaceId(Request $request) {
         $req_id = $request->id;
-        // $faceid1 = json_encode($request->faceid);
-        // $faceid2 = json_encode($request->faceid);
-
         // create db
         Faceid::create([
             "karyawan_id" => $req_id,
@@ -32,10 +30,15 @@ class CreatefaceidController extends Controller
     }
 
     public function hapusFaceid(Request $request){
-        // dd($request->id);
         $req_id = $request->id;
-        $faceid = Faceid::find($req_id);
-        $faceid->delete();
-        return redirect('administrator');
+        $faceid = Faceid::where('karyawan_id', $req_id)->first();
+        $delete = $faceid->delete();
+        if ($delete) {
+            Session::flash('hapusFaceId', 'Face ID berhasil di hapus!');
+            return redirect()->back();
+        }
+        return back()->with([
+            'errorHapusFaceId' => 'Face ID gagal di hapus',
+        ]);
     }
 }
