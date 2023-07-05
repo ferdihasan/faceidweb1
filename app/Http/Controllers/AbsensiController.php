@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Absensi;
 use App\Models\Karyawan;
@@ -35,13 +36,14 @@ class AbsensiController extends Controller
         $req_id = $request->id;
 
         $absen = Absensi::find($req_id);
-
-        if($absen->delete() === true) {
-            // dd('sudah terhapus');
+        $delete = $absen->delete();
+        if($delete) {
+            Session::flash('message', 'Data absensi berhasil di hapus!');
             return redirect('daftar-absensi');
         }
         else {
-            dd('invalid');
+            Session::flash('errorMessage', 'Data absensi gagal di hapus!');
+            return redirect('daftar-absensi');
             
         }
     }
@@ -57,17 +59,24 @@ class AbsensiController extends Controller
     public function simpanAbsensi(Request $request) {
         $req_id = $request->id;
         $req_tanggal_absen = $request->tanggal_absen;
-        $req_waktu_masuk = $request->waktu_masuk;
-        $req_waktu_keluar = $request->waktu_keluar;
+        $req_waktu_absen = $request->waktu_absen;
 
         $absen = Absensi::find($req_id);
-        $absen->update([
+        $update = $absen->update([
             'tanggal_absen' => $req_tanggal_absen,
-            'waktu_masuk' => $req_waktu_masuk,
-            'waktu_keluar' => $req_waktu_keluar,
+            'waktu_absen' => $req_waktu_absen,
         ]);
-
+        Session::flash('message', 'Data absensi berhasil di ubah!');
         return redirect('daftar-absensi');
+        if($update) {
+            Session::flash('message', 'Data absensi berhasil di edit!');
+            return redirect('daftar-absensi');
+        }
+        else {
+            Session::flash('errorMessage', 'Data absensi gagal di edit!');
+            return redirect('daftar-absensi');
+            
+        }
     }
 
     public function tambahAbsensi(){

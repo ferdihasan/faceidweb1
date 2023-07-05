@@ -1,6 +1,27 @@
-{{-- {{ dd($absensi[0]->karyawan->name) }} --}}
 @extends('layouts/main')
+@section('head')
+    <style>
+        .alert-centered {
+            position: absolute;
+            left: 50%;
+            y-index: +1;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endsection
 @section('none-container')
+@if (session()->has('message'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-check-circle-fill"> </i>{{ session('message') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('errorMessage'))
+    <div class="alert alert-success alert-dismissible fade show alert-centered" role="alert">
+        <i class="bi bi-x-circle-fill"> </i>{{ session('errorMessage') }}
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+@endif
 <div class="d-flex flex-row">
 
     @include('components/sidebar')
